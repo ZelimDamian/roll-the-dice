@@ -9,10 +9,7 @@
         >
             <template slot="selection" slot-scope="data">
                 <span>
-                    <v-tooltip top content-class="top">
-                        <v-icon slot="activator" size="35px">mdi-{{data.item.icon}}</v-icon>
-                        <span>{{ data.item.value }}</span>
-                    </v-tooltip>
+                    <v-icon slot="activator" size="35px">mdi-{{data.item.icon}}</v-icon>
                 </span>
             </template>
             <template slot="item" slot-scope="data">
@@ -36,9 +33,6 @@
     import dice from '@/data/dice'
 
     export default {
-        props: {
-            selected: String
-        },
         data() {
             return {
                 dice: dice

@@ -2504,6 +2504,7 @@ date-now@^0.1.4:
 de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
+  integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
 
 debug@*, debug@^3.1.0:
   version "3.1.0"
@@ -2555,9 +2556,10 @@ deepmerge@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
 
-deepmerge@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.1.1.tgz#e862b4e45ea0555072bf51e7fd0d9845170ae768"
+deepmerge@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.2.0.tgz#58ef463a57c08d376547f8869fdc5bcee957f44e"
+  integrity sha512-6+LuZGU7QCNUnAJyX8cIrlzoEgggTM6B7mm+znKOX4t5ltluT9KLjN6g61ECMS0LTsLW7yDpNoxhix5FZcrIow==
 
 default-gateway@^4.2.0:
   version "4.2.0"
@@ -3754,9 +3756,14 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-he@1.1.x, he@^1.1.0:
+he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
+
+he@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
+  integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
 hex-color-regex@^1.1.0:
   version "1.1.0"
@@ -4593,6 +4600,7 @@ lodash.defaultsdeep@^4.6.0:
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
 
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
@@ -4622,6 +4630,11 @@ lodash.transform@^4.6.0:
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash.uniqueid@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.uniqueid/-/lodash.uniqueid-4.0.1.tgz#3268f26a7c88e4f4b1758d679271814e31fa5b26"
+  integrity sha1-MmjyanyI5PSxdY1nknGBTjH6WyY=
 
 lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.10"
@@ -7810,12 +7823,14 @@ vm-browserify@0.0.4:
     indexof "0.0.1"
 
 vue-analytics@^5.8.0:
-  version "5.12.3"
-  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.12.3.tgz#599bd05f9e69efd51645e9e74add81d8a26a88ea"
+  version "5.16.4"
+  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.16.4.tgz#7f9e197cbc64afac96884a05214b17efaf8e9d09"
+  integrity sha512-M67cUqpPeyk2rftrvlx2uU+BQ/C4E8SkF2Ct9LizOYUoTccZtCCJwhMJfQ3XL8xep6p3K8KYz58FzRWvx5zlPw==
 
 vue-chartist@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/vue-chartist/-/vue-chartist-2.1.2.tgz#1a0ca5d516a9de7b51bf8290daaf7a57e4f493dc"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vue-chartist/-/vue-chartist-2.2.0.tgz#08a05cb0bc1fc629befe3ca503a9af2d6def1ce7"
+  integrity sha512-LlTL4BvBqFe7yX0fD+PY12bblgVm7ZZHsVtWssmHXi6YVh/D2pfnV7Sm9+HFOVr3vqRvKpl6F048K2BWpGC4qw==
   dependencies:
     chartist "^0.11.0"
 
@@ -7850,16 +7865,19 @@ vue-loader@^15.7.0:
     vue-style-loader "^4.1.0"
 
 vue-meta@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-1.5.2.tgz#f5bdbce34ddd296788988dbd4eaf3873a54bc57b"
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-1.6.0.tgz#89b664f6011a207e098e8ba3b9d32e29c819b65d"
+  integrity sha512-LLHejsOYbJiSEDSgZvjHB3fFY7lUxsDFLkuSqf5eBohEvhhddBTOHa3heoFTcI5sxsZSZt26uUzoLVe4CT6Y4A==
   dependencies:
-    deepmerge "^2.0.0"
+    deepmerge "^3.2.0"
     lodash.isplainobject "^4.0.6"
+    lodash.uniqueid "^4.0.1"
     object-assign "^4.1.1"
 
 vue-router@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.5.tgz#24636923c7f1a62da3a577cf75a058f9fa328581"
+  integrity sha512-DGU+7+eeiSq/oNZ6epA/rcNkAd0m2+uugR5i4Eh4KBvclUmorvNJ6iForYjQkgvKi9GdamybaMpl85eDgxM2eQ==
 
 vue-style-loader@^4.1.0:
   version "4.1.1"
@@ -7869,8 +7887,9 @@ vue-style-loader@^4.1.0:
     loader-utils "^1.0.2"
 
 vue-template-compiler@^2.5.17:
-  version "2.5.17"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.17.tgz#52a4a078c327deb937482a509ae85c06f346c3cb"
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
+  integrity sha512-jVZkw4/I/HT5ZMvRnhv78okGusqe0+qH2A0Em0Cp8aq78+NK9TII263CDVz2QXZsIT+yyV/gZc/j/vlwa+Epyg==
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -7881,21 +7900,23 @@ vue-template-es2015-compiler@^1.9.0:
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
 vue@^2.5.17:
-  version "2.5.17"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
+  integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
 vuetify@^1.2.5:
-  version "1.5.11"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.11.tgz#ae1790df1dc1505289116dfd79426d83b38d2ba9"
-  integrity sha512-S4f0wXEbQNHnP4IUtSSIRmzU/fjyPtTN5fC80JlHdTcF78VLT1/xsTqXgNtSW5712UJtrLPpF6b0LfOTJrCCBg==
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.5.12.tgz#77d18fc7ea5d6297bac40880df83fc241ba840a2"
+  integrity sha512-NxYNPiqEEgprTzNft0x0oiyOgbclbARgOJMKWRfeu3qx8pE0JG3XMgljVv1Ttq0ErKf1lvNLFRuajDgRdQxR/Q==
 
 vuex-router-sync@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/vuex-router-sync/-/vuex-router-sync-5.0.0.tgz#1a225c17a1dd9e2f74af0a1b2c62072e9492b305"
 
 vuex@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.0.tgz#634b81515cf0cfe976bd1ffe9601755e51f843b9"
+  integrity sha512-mdHeHT/7u4BncpUZMlxNaIdcN/HIt1GsGG5LKByArvYG/v6DvHcOxvDCts+7SRdCoIRGllK8IMZvQtQXLppDYg==
 
 watchpack@^1.5.0:
   version "1.6.0"

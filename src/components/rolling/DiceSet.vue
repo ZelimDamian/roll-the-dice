@@ -1,28 +1,18 @@
 <template>
-    <v-card class="">
-        <v-toolbar card dense>
-            <v-toolbar-title>
-                <span class="subheading">Dice set</span>
-            </v-toolbar-title>
+    <v-card class="dice-set-card">
+        <v-toolbar class="ma-0" card color="green">
+            <span dark class="count-span display-2">{{count}}</span>
+            <v-icon dark>mdi-close</v-icon>
+            <v-icon v-if="dieType" dark x-large>mdi-{{dieType.icon}}</v-icon>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>mdi-dice-multiple</v-icon>
-            </v-btn>
+            <v-divider vertical ></v-divider>
+            <v-icon dark large>mdi-dice-multiple</v-icon>
         </v-toolbar>
 
         <v-card-text>
-            <v-layout justify-space-between mb-3>
-                <v-flex text-xs-left fill-height >
-                    <span class="display-3 font-weight-light" v-text="count"></span>
-                    <v-icon>mdi-close</v-icon>
-                    <span v-if="dieType" @click="toggle">
-                        <v-icon x-large> mdi-{{ dieType.icon }} </v-icon>
-                    </span>
-                </v-flex>
-                <v-flex v-if="!dieType">
-                    <rolling-dice-type-picker @dieTypeChanged="dieTypeChanged"></rolling-dice-type-picker>
-                </v-flex>
-            </v-layout>
+            <v-flex>
+                <rolling-dice-type-picker @dieTypeChanged="dieTypeChanged"></rolling-dice-type-picker>
+            </v-flex>
             <v-slider
                       v-model="count" 
                       always-dirty
@@ -30,10 +20,10 @@
                       ticks="always"
                       :tick-labels="tickLabels">
                 <template v-slot:prepend>
-                    <v-icon @click="decrement"> mdi-minus</v-icon>
+                    <v-icon large color="green"@click="decrement"> mdi-minus</v-icon>
                 </template>
                 <template v-slot:append>
-                    <v-icon @click="increment"> mdi-plus</v-icon>
+                    <v-icon large color="green" @click="increment"> mdi-plus</v-icon>
                 </template>
             </v-slider>
         </v-card-text>
@@ -71,4 +61,15 @@
     }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+    .count-span {
+        color: white;
+    }
+
+    .dice-set-card {
+        min-width: 320px;
+        .v-toolbar__content {
+            margin-left: 0 !important;
+        }
+    }
+</style>
