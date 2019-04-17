@@ -4,13 +4,15 @@
             <span dark class="count-span display-2">{{count}}</span>
             <v-icon dark>mdi-close</v-icon>
             <v-icon v-if="dieType" dark x-large>mdi-{{dieType.icon}}</v-icon>
-            <v-icon v-if="!dieType" dark x-large>mdi-dice-multiple</v-icon>
             <v-icon v-if="mod" dark>mdi-{{mod > 0 ? 'plus' : "minus"}}</v-icon>
             <span v-if="mod" dark class="count-span display-2">{{Math.abs(mod)}}</span>
             <v-spacer></v-spacer>
             <v-divider vertical></v-divider>
-            <v-btn icon @click="roll" :disabled="!canRoll">
+            <v-btn icon @click="roll" v-if="canRoll">
                 <v-icon dark large>mdi-dice-multiple</v-icon>
+            </v-btn>
+            <v-btn icon @click="remove" v-if="!canRoll">
+                <v-icon dark large>mdi-close</v-icon>
             </v-btn>
         </v-toolbar>
 
@@ -59,8 +61,9 @@
                     dark
             >
                 <v-card-text>
-                    You rolled <span class="display-2">{{rolled}}</span>
-                    <v-icon></v-icon>
+                    You rolled <span class="display-2">{{rolled}} = </span> 
+                    <span class="display-1" v-for="roll in rolls">{{roll}} + </span>
+                    <span class="display-1">{{mod}}</span>
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -76,7 +79,7 @@
             dieType: null,
             maxCount: 10,
             showDialog: false,
-            rolled: 0
+            rolls: []
         }),
 
         computed: {
@@ -88,6 +91,9 @@
             },
             canRoll() {
                 return !!this.dieType;
+            },
+            rolled() {
+                return this.rolls.reduce((sum, roll) => sum + roll, 0) + this.mod;
             }
         },
 
@@ -108,7 +114,11 @@
                 if (!this.canRoll) return;
                 if (this.showDialog) return;
                 const max = this.dieType.value;
-                this.rolled = this.count * Math.floor(Math.random() * (max)) + 1 + this.mod;
+                let rolls = [];
+                for (let i = 0; i < this.count; i++) {
+                    rolls.push(Math.floor(Math.random() * (max)) + 1);
+                }
+                this.rolls = rolls;
                 this.toggleDialog();
                 setTimeout(this.toggleDialog, 3000)
             },
@@ -117,6 +127,8 @@
             },
             dieTypeChanged(dieType) {
                 this.dieType = dieType;
+            }, remove() {
+                this.$emit('remove');
             }
         }
     }
@@ -133,5 +145,12 @@
         .v-toolbar__content {
             margin-left: 0 !important;
         }
+    }
+    
+    .transparent.border-none {
+        border: none;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
     }
 </style>

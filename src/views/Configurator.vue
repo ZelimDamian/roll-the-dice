@@ -8,7 +8,7 @@
 
             <v-layout pa-2 wrap>
                 <v-flex v-for="set in sets" lg6 pa-1>
-                    <rolling-dice-set></rolling-dice-set>
+                    <rolling-dice-set @remove="removeSet(set)"></rolling-dice-set>
                 </v-flex>
             </v-layout>
             <v-divider></v-divider>
@@ -33,6 +33,8 @@
     methods: {
         addSet() {
             this.sets.push({})
+        }, removeSet(set) {
+            this.sets = this.sets.filter(s => s !== set);
         }
     }
   }
