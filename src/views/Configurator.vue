@@ -6,15 +6,15 @@
             <div class="title font-weight-light mb-2">Configure your dice sets...</div>
           </div>
 
-          <v-layout align-center justify-center wrap >
-            <v-flex>
-              <rolling-dice-set></rolling-dice-set>
-            </v-flex>
-          </v-layout>
-
+            <v-layout pa-2 wrap>
+                <v-flex v-for="set in sets" lg6 pa-1>
+                    <rolling-dice-set></rolling-dice-set>
+                </v-flex>
+            </v-layout>
+            <v-divider></v-divider>
           <v-layout >
             <v-spacer></v-spacer>
-                <v-btn fab dark large color="green" class="round">
+                <v-btn fab dark large color="green" class="round" @click="addSet">
                   <v-icon dark>mdi-plus</v-icon>
                 </v-btn>
           </v-layout>
@@ -25,8 +25,16 @@
 
 <script>
   export default {
-    data: () => ({
-    })
+    data() {
+        return {
+            sets: [{}]
+        }
+    },
+    methods: {
+        addSet() {
+            this.sets.push({})
+        }
+    }
   }
 </script>
 
