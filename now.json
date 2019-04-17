@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "roll-the-dice",
+  "alias": "roll.zelim.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "routes": [
     { "src": "^/js/(.*)", "dest": "/js/$1" },
