@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "dev": "npm run serve",
     "build": "vue-cli-service build",
+    "now-build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
