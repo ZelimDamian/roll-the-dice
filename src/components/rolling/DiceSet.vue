@@ -1,8 +1,8 @@
 <template>
     <v-card class="dice-set-card">
         <v-toolbar class="ma-0" card color="green">
-            <span dark class="count-span display-2">{{count}}</span>
-            <v-icon dark>mdi-close</v-icon>
+            <span v-if="dieType" dark class="count-span display-2">{{count}}</span>
+            <v-icon v-if="dieType" dark>mdi-close</v-icon>
             <v-icon v-if="dieType" dark x-large>mdi-{{dieType.icon}}</v-icon>
             <v-icon v-if="mod" dark>mdi-{{mod > 0 ? 'plus' : "minus"}}</v-icon>
             <span v-if="mod" dark class="count-span display-2">{{Math.abs(mod)}}</span>
@@ -56,10 +56,7 @@
                 persistent
                 width="300"
         >
-            <v-card
-                    color="blue"
-                    dark
-            >
+            <v-card color="blue" dark >
                 <v-card-text>
                     You rolled <span class="display-2">{{rolled}} = </span> 
                     <span class="display-1" v-for="roll in rolls">{{roll}} + </span>
@@ -67,7 +64,6 @@
                 </v-card-text>
             </v-card>
         </v-dialog>
-
     </v-card>
 </template>
 
@@ -84,10 +80,10 @@
 
         computed: {
             tickLabels() {
-                return [...Array(this.maxCount).keys()].map(i => i + 1)
+                return [...Array(this.maxCount).keys()].map(i => i + 1).map(i => i % 2 ? '' : i)
             },
             modTickLabels() {
-                return [...Array(this.maxCount * 2 + 1).keys()].map(i => i - this.maxCount)
+                return [...Array(this.maxCount * 2 + 1).keys()].map(i => i - this.maxCount).map(i => i % 5 ? '' : i)
             },
             canRoll() {
                 return !!this.dieType;
