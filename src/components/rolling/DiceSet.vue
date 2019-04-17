@@ -68,6 +68,8 @@
 </template>
 
 <script>
+    import random from '@/utils/random'
+    
     export default {
         data: () => ({
             count: 1,
@@ -112,7 +114,7 @@
                 const max = this.dieType.value;
                 let rolls = [];
                 for (let i = 0; i < this.count; i++) {
-                    rolls.push(Math.floor(Math.random() * (max)) + 1);
+                    rolls.push(Math.floor(random.rand(1, max)));
                 }
                 this.rolls = rolls;
                 this.toggleDialog();
